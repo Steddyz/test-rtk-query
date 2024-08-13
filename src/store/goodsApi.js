@@ -7,7 +7,7 @@ export const goodsApi = createApi({
   }),
   endpoints: (build) => ({
     getGoods: build.query({
-      query: () => `goods`,
+      query: (limit = "") => `goods?${limit && `_limit=${limit}`}`,
     }),
   }),
 });
