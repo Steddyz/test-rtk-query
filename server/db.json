@@ -1,20 +1,24 @@
 {
   "goods": [
     {
-      "id": 1,
-      "name": "Milk"
+      "name": "Pivo",
+      "id": 1
     },
     {
-      "id": 2,
-      "name": "Pivo"
+      "name": "Kir Sosichka",
+      "id": 2
     },
     {
-      "id": 3,
-      "name": "Kir Sosichka"
+      "name": "pipipypy",
+      "id": 3
+    },
+    {
+      "name": "Bread",
+      "id": 4
     },
     {
       "name": "NEMOLOKO",
-      "id": 6
+      "id": 5
     }
   ]
 }

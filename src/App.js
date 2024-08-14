@@ -1,11 +1,17 @@
 import { useState } from "react";
-import { useGetGoodsQuery, useAddProductMutation } from "./store";
+import React from "react";
+import {
+  useGetGoodsQuery,
+  useAddProductMutation,
+  useDeleteProductMutation,
+} from "./store";
 
 function App() {
   const [count, setCount] = useState("");
   const { data, isLoading } = useGetGoodsQuery(count);
   const [newProduct, setNewProduct] = useState("");
   const [addProduct, { isError, error }] = useAddProductMutation();
+  const [deleteProduct] = useDeleteProductMutation();
 
   const handleAddProduct = async () => {
     if (newProduct !== "") {
@@ -18,6 +24,10 @@ function App() {
     if (event.key === "Enter") {
       await handleAddProduct();
     }
+  };
+
+  const buttonDeleteProduct = async (id) => {
+    await deleteProduct(id).unwrap();
   };
 
   return (
@@ -43,9 +53,17 @@ function App() {
         </select>
       </div>
 
-      <ul>
+      <ul className="list">
         {data?.map((item) => (
-          <li key={item.id}>{item.name}</li>
+          <React.Fragment key={item.id}>
+            <li className="item">{item.name}</li>
+            <button
+              className="delete"
+              onClick={() => buttonDeleteProduct(item.id)}
+            >
+              X
+            </button>
+          </React.Fragment>
         ))}
       </ul>
     </div>
