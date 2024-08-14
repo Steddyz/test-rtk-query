@@ -1,0 +1,21 @@
+.input_wrapper {
+  margin-bottom: 20px;
+}
+
+.button_create {
+  padding: 9px 15px;
+  font-size: 18px;
+  border-radius: 5px;
+  color: #fff;
+  border: 1px solid #000;
+  background-color: transparent;
+  background-color: #000;
+  font-weight: 500;
+
+  transition: all 0.2s ease-in;
+}
+
+.button_create:hover {
+  background-color: #fff;
+  color: #000;
+}
